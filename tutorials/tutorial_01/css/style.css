@@ -1,0 +1,13 @@
+.chess-table {
+  border: 1px solid #000000;
+  margin: 0 auto;
+}
+
+.chess-table td {
+  padding: 40px;
+  border: 1px solid #000000;
+}
+
+.black-color {
+  background: #000000;
+}
