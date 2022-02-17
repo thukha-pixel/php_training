@@ -15,6 +15,7 @@
     <div class="inner-container">
         <h1 class="hdr-h1">Welcome To Age Calculator</h1>
 
+        <!-- define date of birth  -->
         <?php
 
         if (empty($_POST['date-of-birth'])) {
@@ -22,8 +23,10 @@
         } else {
             $dateOfBirth = $_POST['date-of-birth'];
         }
-        
+
         ?>
+
+        <!-- send data to $_POST -->
         <form action="" method="POST">
             <input type="date" name="date-of-birth" id="datepicker" value="<?php $dateOfBirth; ?>" required>
             <input type="submit" name="submit" value="Calculate">
@@ -31,6 +34,7 @@
 
         <?php
 
+        // calculate if submit data was included in $_POST
         if (isset($_POST['submit'])) {
             $currentDate = date('m/d/y');
             $dateOfBirth = $_POST['date-of-birth'];
@@ -38,7 +42,7 @@
             $age = date_diff(date_create($dateOfBirth), date_create($currentDate));
             echo "<h2 class='age-h2'>You are " . $age->format("%y") . " years old!. </h2>";
         }
-        
+
         ?>
     </div>
 

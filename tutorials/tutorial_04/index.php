@@ -20,12 +20,14 @@
                 <div class="underline-title"></div>
             </div>
 
+            <!-- catch incorrect message from login.php  -->
             <?php if (isset($_GET['incorrect'])) : ?>
                 <div class="error-alert">
                     Incorrect Email or Password
                 </div>
             <?php endif ?>
-
+            
+            <!-- send login data to login.php  -->
             <form action="_actions/login.php" method="POST" class="form">
                 <label for="user-email">
                     &nbsp;Email

@@ -1,11 +1,12 @@
 <?php
 
-    session_start();
+session_start();
 
-    if (!isset($_SESSION['user'])) {
-        header('location: index.php');
-        exit();
-    } 
+// check session user data 
+if (!isset($_SESSION['user'])) {
+    header('location: index.php');
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -29,8 +30,8 @@
 
                 <p>Your Name is <?php echo $_SESSION['user']['username']; ?></p>
 
-                <p>Your Email is "thukha@gmail.com"</p> <br>
-                <p>Your Password is "12345"</p>
+                <p>Your Email is "<?php echo $_SESSION['user']['login_email']; ?>"</p> <br>
+                <p>Your Password is "<?php echo $_SESSION['user']['login_password']; ?>"</p>
             </div>
 
             <a href="_actions/logout.php" id="submit-btn">Logout</a>
