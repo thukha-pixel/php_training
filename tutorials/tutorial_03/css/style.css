@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.inner-container {
+  max-width: 500px;
+  margin:0 auto;
+  padding: 50px;
+  text-align: center;
+  background-color: #E4E9FD;
+  background-image: -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%);
+  border-radius: 5px;
+}
+
+.hdr-h1 {
+  font-size: 30px;
+  padding-bottom: 50px;
+}
+
+.age-h2 {
+  font-size: 25px;
+  padding: 20px 0;
+}
+
+input {
+  padding: 10px 20px;
+}
+
+input:focus {
+  outline: none;
+  background: #A683E3;
+}
+
+input[type='submit']:hover {
+  background: #A683E3;
+}
