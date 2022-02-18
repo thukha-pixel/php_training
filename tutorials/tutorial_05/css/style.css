@@ -1,0 +1,24 @@
+a {
+  text-decoration: none;
+}
+
+body {
+  background: -webkit-linear-gradient(bottom, #2dbd6e, #a6f77b);
+  background-repeat: no-repeat;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.inner-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #a6f77b;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+  margin: 20px 0;
+}

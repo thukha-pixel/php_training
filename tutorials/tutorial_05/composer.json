@@ -1,0 +1,17 @@
+{
+    "name": "acer/tutorial_05",
+    "autoload": {
+        "psr-4": {
+            "Acer\\Tutorial05\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "thukha-pixel",
+            "email": "tkha730@gmail.com"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.21"
+    }
+}
