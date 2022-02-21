@@ -4,7 +4,7 @@ $name = $_FILES['photo']['name'];
 $extension = pathinfo($name, PATHINFO_EXTENSION);
 
 if (isset($name)) {
-    if($extension=='jpg' || $extension=='jpeg' || $extension=='png') {
+    if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png') {
         $tmp = $_FILES['photo']['tmp_name'];
         $dir = $_POST['img-folder-name'];
 
@@ -15,4 +15,3 @@ if (isset($name)) {
         header('location: index.php?incorrect=1');
     }
 }
-?>
