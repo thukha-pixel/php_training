@@ -1,0 +1,16 @@
+{
+    "name": "bib/tutorial_08",
+    "autoload": {
+        "psr-4": {
+            "Bib\\Tutorial08\\": "src/",
+            "DataBase\\": "DataBase/"
+        }
+    },
+    "authors": [
+        {
+            "name": "thukha-pixel",
+            "email": "tkha730@gmail.com"
+        }
+    ],
+    "require": {}
+}
