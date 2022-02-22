@@ -5,6 +5,7 @@ include 'phpqrcode/qrlib.php';
 $qrTxt = $_POST['qr-txt'];
 
 if (!empty($qrTxt)) {
+    mkdir('qr_img');
     $path = 'qr_img/';
     $file = $path . uniqid() . '.png';
     QRcode::png($qrTxt, $file, 5, 5);
