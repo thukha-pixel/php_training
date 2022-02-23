@@ -1,0 +1,206 @@
+a {
+  text-decoration: none;
+}
+
+body {
+  background: -webkit-linear-gradient(bottom, #2dbd6e, #a6f77b);
+  background-repeat: no-repeat;
+}
+
+label {
+  font-family: "Raleway", sans-serif;
+  font-size: 11pt;
+  margin-top: 30px;
+  color: #0a2ae0a6;
+  font-weight: bold;
+}
+
+#card {
+  background: #fbfbfb;
+  border-radius: 8px;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+  margin: 30px auto;
+  width: 450px;
+}
+
+#card-table {
+  background: #fbfbfb;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+  margin: 30px auto;
+}
+
+#card-content {
+  padding: 12px 44px;
+}
+
+#card-title {
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 4px;
+  padding-bottom: 23px;
+  padding-top: 13px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#card-title p {
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+a#submit-btn {
+  display: block;
+  text-align: center;
+  padding-top: 10px;
+}
+
+#submit-btn {
+  background: -webkit-linear-gradient(right, #a6f77b, #2dbd6e);
+  border: none;
+  border-radius: 21px;
+  box-shadow: 0px 1px 8px #24c64f;
+  cursor: pointer;
+  color: white;
+  font-family: "Raleway SemiBold", sans-serif;
+  height: 42.3px;
+  margin: 0 auto;
+  margin-top: 50px;
+  transition: 0.25s;
+  width: 153px;
+}
+
+#visit-btn {
+  background: -webkit-linear-gradient(right, #7b9cf7, #3c188f);
+  border: none;
+  border-radius: 21px;
+  box-shadow: 0px 1px 8px #233a50;
+  cursor: pointer;
+  color: white;
+  font-family: "Raleway SemiBold", sans-serif;
+  margin: 0 auto;
+  margin-top: 10px;
+  transition: 0.25s;
+  padding: 12px 35px;
+}
+
+#update-btn {
+  background: -webkit-linear-gradient(right, #a6f77b, #2dbd6e);
+  border: none;
+  border-radius: 21px;
+  box-shadow: 0px 1px 8px #24c64f;
+  cursor: pointer;
+  color: white;
+  font-family: "Raleway SemiBold", sans-serif;
+  margin: 0 auto;
+  margin-top: 10px;
+  transition: 0.25s;
+  padding: 12px 35px;
+}
+
+#delete-btn {
+  background: -webkit-linear-gradient(right, #f77b7b, #bd2d2d);
+  border: none;
+  border-radius: 21px;
+  box-shadow: 0px 1px 8px #c62424;
+  cursor: pointer;
+  color: white;
+  font-family: "Raleway SemiBold", sans-serif;
+  margin: 0 auto;
+  margin-top: 10px;
+  transition: 0.25s;
+  padding: 12px 35px;
+}
+
+a#visit-btn,
+a#update-btn,
+a#delete-btn {
+  display: block;
+}
+
+#delete-btn:hover {
+  box-shadow: 0px 1px 18px #4e0202;
+}
+
+#visit-btn:hover {
+  box-shadow: 0px 1px 18px #233a50;
+}
+
+#submit-btn:hover,
+#update-btn:hover {
+  box-shadow: 0px 1px 18px #24c64f;
+}
+
+.form {
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-border {
+  background: -webkit-linear-gradient(right, #a6f77b, #2ec06f);
+  height: 1px;
+  width: 100%;
+}
+
+.form-content {
+  background: #fbfbfb;
+  border: none;
+  outline: none;
+  padding-top: 14px;
+  margin: 20px 0;
+  text-align: left;
+}
+
+input[name="date-of-birth"].form-content,
+input[name="income"].form-content {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.underline-title {
+  background: -webkit-linear-gradient(right, #a6f77b, #2ec06f);
+  height: 2px;
+  margin: 1.1rem auto 0 auto;
+  width: 89px;
+}
+
+.error-alert {
+  background: #ff0000;
+  margin: 20px 0 0 0;
+  padding: 20px 0;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+}
+
+.success-alert {
+  background: #2ec06f;
+  margin: 20px 0 0 0;
+  padding: 20px 0;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+}
+
+
+table {
+  border-radius: 5px;
+  font-family: "Raleway", sans-serif;
+}
+
+table tr th {
+  padding: 10px 20px;
+  border: 2px solid #0a2ae0a6;
+}
+
+table tr td {
+  padding: 10px 20px;
+  border: 2px solid #0a2ae0a6;
+}
+
+.img-family {
+  width: 100px;
+  height: 100px;
+}
+
+#myChart {
+  max-width: 600px;
+  width: 100%;
+}
