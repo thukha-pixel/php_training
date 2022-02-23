@@ -19,8 +19,8 @@ $all = $table->find($singleId);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutorial 09 | Edit Page</title>
-    <link rel="stylesheet" href="css/reset.css"/>
-    <link rel="stylesheet" href="css/style3.css"/>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style3.css" />
 </head>
 
 <body>
@@ -48,7 +48,7 @@ $all = $table->find($singleId);
             </div>
 
             <form class="form" action="_actions/update.php" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="id" value="<?= $all->id ?>" >
+                <input type="hidden" name="id" value="<?= $all->id ?>">
                 <input class="form-content" type="text" name="name" placeholder="Enter Name" autocomplete="off" value="<?= $all->name ?>" required>
                 <div class="form-border"></div>
 

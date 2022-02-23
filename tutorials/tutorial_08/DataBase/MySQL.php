@@ -5,7 +5,7 @@ namespace DataBase;
 use PDO;
 use PDOException;
 
- /*
+/*
 *MySQL Database
 *constructor
 *   $dbhost 
@@ -49,7 +49,7 @@ class MySQL
             );
 
             $this->db->exec("CREATE DATABASE IF NOT EXISTS  `house_membership`");
-            
+
             return $this->db  = new PDO(
                 "mysql:host=$this->dbhost;dbname=$this->dbname",
                 $this->dbuser,
@@ -59,7 +59,6 @@ class MySQL
                     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
                 ]
             );
-
         } catch (PDOException $e) {
             return $e->getMessage();
         }

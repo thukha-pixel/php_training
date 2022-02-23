@@ -46,7 +46,7 @@
 
                 <input class="form-content" type="text" name="phone" placeholder="Enter Phone Number" autocomplete="off" required>
                 <div class="form-border"></div>
-                
+
                 <label for="date-of-birth">
                     &nbsp;Enter Your Birthday
                 </label><br>
@@ -54,9 +54,9 @@
                 <div class="form-border"></div>
 
                 <input id="submit-btn" type="submit" name="submit" value="Insert Data" />
-                
+
                 <a href="family_table.php" id="visit-btn" type="button" name="visit-btn" value="Visit Table">Visit Table</a>
-                
+
             </form>
         </div>
     </div>

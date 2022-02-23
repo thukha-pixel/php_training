@@ -8,7 +8,8 @@ use PDOException;
  *MembersTable associate with the model
  *MySQL $db (Dependency Injection)
 */
-class MembersTable 
+
+class MembersTable
 {
     private $db = null;
 
@@ -41,9 +42,8 @@ class MembersTable
 
             $statement = $this->db->prepare($query);
             $statement->execute();
-
         } catch (PDOException $e) {
-            return $e->getMessage() ();
+            return $e->getMessage()();
         }
     }
 
@@ -65,9 +65,8 @@ class MembersTable
 
             $statement = $this->db->prepare($query);
             $statement->execute($data);
-            
         } catch (PDOException $e) {
-            return $e->getMessage() ();
+            return $e->getMessage()();
         }
     }
 
@@ -75,6 +74,7 @@ class MembersTable
     *Find Data
     *
     *@param int or string $id
+    *return data from db as object
     */
     public function find($id)
     {
@@ -106,12 +106,12 @@ class MembersTable
     /*
     *Update Data
     *
-    *@param int or string $id
-    *@param $name
-    *@param $email
-    *@param $relative
-    *@param $phone
-    *@param $date_of_birth
+    *@param int $id
+    *@param string $name
+    *@param string $email
+    *@param string $relative
+    *@param string or number $phone
+    *@param string(DATETIME)$date_of_birth
     */
     public function update($id, $name, $email, $relative, $phone, $date_of_birth)
     {
@@ -130,21 +130,20 @@ class MembersTable
             $statement = $this->db->prepare($query);
             $statement->execute([
                 ':id' => $id,
-                ':name' => $name, 
-                ':email' => $email, 
-                ':relative' =>$relative, 
-                ":phone" =>$phone,
-                ":date_of_birth" =>$date_of_birth
+                ':name' => $name,
+                ':email' => $email,
+                ':relative' => $relative,
+                ":phone" => $phone,
+                ":date_of_birth" => $date_of_birth
             ]);
-
         } catch (PDOException $e) {
-            return $e->getMessage() ();
+            return $e->getMessage()();
         }
     }
 
-     /*
+    /*
     *Get All Data
-    *
+    *return data from db as array
     */
     public function getAll()
     {

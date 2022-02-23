@@ -48,7 +48,7 @@ $all = $table->find($singleId);
             </div>
 
             <form class="form" action="_actions/update.php" method="POST" enctype="multipart/form-data">
-                <input type="text" name="id" value="<?= $all->id ?>" >
+                <input type="text" name="id" value="<?= $all->id ?>">
                 <input class="form-content" type="text" name="name" placeholder="Enter Name" autocomplete="off" value="<?= $all->name ?>" required>
                 <div class="form-border"></div>
 
@@ -60,7 +60,7 @@ $all = $table->find($singleId);
 
                 <input class="form-content" type="text" name="phone" placeholder="Enter Phone Number" autocomplete="off" value="<?= $all->phone ?>">
                 <div class="form-border"></div>
-                
+
                 <label for="date-of-birth">
                     &nbsp;Enter Your Birthday
                 </label><br>
@@ -68,9 +68,9 @@ $all = $table->find($singleId);
                 <div class="form-border"></div>
 
                 <input id="submit-btn" type="submit" name="submit" value="Update Data" />
-                
+
                 <a href="family_table.php" id="visit-btn" type="button" name="visit-btn" value="Visit Table">Visit Table</a>
-                
+
             </form>
         </div>
     </div>

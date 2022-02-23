@@ -5,8 +5,6 @@ include_once("../vendor/autoload.php");
 use DataBase\MySQL;
 use DataBase\MembersTable;
 
-print_r($_POST);
-
 $id = $_POST['id'];
 $name = $_POST['name'] ?? 'Unknown';
 $email = $_POST['email'] ?? 'Unknown';

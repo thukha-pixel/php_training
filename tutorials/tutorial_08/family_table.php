@@ -39,32 +39,32 @@ $all = $table->getAll();
             </tr>
 
             <?php foreach ($all as $member) : ?>
-            <tr>
-                <td>
-                    <?= $member->id ?>
-                </td>
-                <td>
-                    <?= $member->name ?>
-                </td>
-                <td>
-                    <?= $member->email ?>
-                </td>
-                <td>
-                    <?= $member->relative ?>
-                </td>
-                <td>
-                    <?= $member->phone ?>
-                </td>
-                <td>
-                    <?= $member->date_of_birth ?>
-                </td>
-                <td>
-                    <a href="edit.php?id=<?= $member->id ?>" id="update-btn" type="button" name="update-btn">Update</a>
-                </td>
-                <td>
-                    <a href="_actions/delete.php?id=<?= $member->id ?>" id="delete-btn" type="button" name="delete-btn" onClick="return confirm('Are you sure?')">Delete</a>
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        <?= $member->id ?>
+                    </td>
+                    <td>
+                        <?= $member->name ?>
+                    </td>
+                    <td>
+                        <?= $member->email ?>
+                    </td>
+                    <td>
+                        <?= $member->relative ?>
+                    </td>
+                    <td>
+                        <?= $member->phone ?>
+                    </td>
+                    <td>
+                        <?= $member->date_of_birth ?>
+                    </td>
+                    <td>
+                        <a href="edit.php?id=<?= $member->id ?>" id="update-btn" type="button" name="update-btn">Update</a>
+                    </td>
+                    <td>
+                        <a href="_actions/delete.php?id=<?= $member->id ?>" id="delete-btn" type="button" name="delete-btn" onClick="return confirm('Are you sure?')">Delete</a>
+                    </td>
+                </tr>
             <?php endforeach ?>
         </table>
     </div>

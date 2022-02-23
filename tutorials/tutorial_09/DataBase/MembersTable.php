@@ -8,7 +8,7 @@ use PDOException;
  *MembersTable associate with the model
  *MySQL $db (Dependency Injection)
 */
-class MembersTable 
+class MembersTable
 {
     private $db = null;
 
@@ -44,7 +44,7 @@ class MembersTable
             $statement->execute();
 
         } catch (PDOException $e) {
-            return $e->getMessage() ();
+            return $e->getMessage()();
         }
     }
 
@@ -75,7 +75,8 @@ class MembersTable
     /*
     *Find Data
     *
-    *@param int or string $id
+    *@param int $id
+    *return data from db as object
     */
     public function find($id)
     {
@@ -91,7 +92,7 @@ class MembersTable
     /*
     *Delete Data
     *
-    *@param int or string $id
+    *@param int $id
     */
     public function delete($id)
     {
@@ -107,13 +108,13 @@ class MembersTable
     /*
     *Update Data
     *
-    *@param int or string $id
-    *@param $name
-    *@param $email
-    *@param $relative
-    *@param $phone
-    *@param $date_of_birth
-    *@param $income
+    *@param int $id
+    *@param string $name
+    *@param string $email
+    *@param string $relative
+    *@param string or number $phone
+    *@param string(DATETIME)$date_of_birth
+    *@param string $income
     */
     public function update($id, $name, $email, $relative, $phone, $date_of_birth, $income)
     {
@@ -133,9 +134,9 @@ class MembersTable
             $statement = $this->db->prepare($query);
             $statement->execute([
                 ':id' => $id,
-                ':name' => $name, 
-                ':email' => $email, 
-                ':relative' =>$relative, 
+                ':name' => $name,
+                ':email' => $email,
+                ':relative' =>$relative,
                 ":phone" =>$phone,
                 ":date_of_birth" =>$date_of_birth,
                 ":income" => $income,
@@ -148,7 +149,7 @@ class MembersTable
 
      /*
     *Get All Data
-    *
+    *return data from db as array
     */
     public function getAll()
     {
