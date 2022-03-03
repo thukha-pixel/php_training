@@ -118,7 +118,7 @@ class MembersTable
     *@param string $income
     *@param string $password
     */
-    public function update($id, $name, $email, $relative, $phone, $date_of_birth, $income, $password, $token)
+    public function update($id, $name, $email, $relative, $phone, $date_of_birth, $income)
     {
         try {
             $query = "
@@ -129,7 +129,6 @@ class MembersTable
                     phone = :phone,
                     date_of_birth = :date_of_birth,
                     income = :income,
-                    password = :password,
                     updated_at = NOW()
                 WHERE id = :id
             ";
@@ -142,8 +141,7 @@ class MembersTable
                 ':relative' => $relative,
                 ":phone" => $phone,
                 ":date_of_birth" => $date_of_birth,
-                ":income" => $income,
-                ":password" => $password
+                ":income" => $income
             ]);
         } catch (PDOException $e) {
             return $e->getMessage()();

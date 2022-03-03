@@ -27,25 +27,25 @@ if ($table) {
         $email = $confirmation->email;
         $token = $confirmation->token;
 
-        //Create an instance; passing `true` enables exceptions
+        // Create an instance; passing `true` enables exceptions
         $mail = new PHPMailer(true);
 
         try {
             $mail->isSMTP();
             $mail->Mailer = "smtp";
             $mail->SMTPDebug = 1;
-            $mail->SMTPAuth = true;                                   // Set mailer to use SMTP
+            $mail->SMTPAuth = true;  // Set mailer to use SMTP
             $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-            $mail->SMTPAuth = true;                               // Enable SMTP authentication
-            $mail->Username = '';                 // SMTP username
-            $mail->Password = '';                           // SMTP password
-            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-            $mail->Port = 587;                                    // TCP port to connect to
+            $mail->SMTPAuth = true;  // Enable SMTP authentication
+            $mail->Username = '';  // SMTP username
+            $mail->Password = '';  // SMTP password
+            $mail->SMTPSecure = 'tls';  // Enable TLS encryption, `ssl` also accepted
+            $mail->Port = 587;  // TCP port to connect to
 
             $mail->setfrom('tkha730@gmail.com', 'Thu Kha');
-            $mail->addaddress("$email", "$name");     // Add a recipient
+            $mail->addaddress("$email", "$name");  // Add a recipient
 
-            $mail->isHTML(true);                                  // Set email format to HTML
+            $mail->isHTML(true);  // Set email format to HTML
 
             $mail->Subject = "Hello, $name";
             $mail->Body    = "Please,<b><a href='http://localhost/php_training/tutorials/tutorial_10/_actions/reset_password.php?" . "id=$id&email=$email&token=$token'" . ">click here</a></b> to change your password";

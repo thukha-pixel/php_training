@@ -30,7 +30,6 @@ $all = $table->getAll();
             <a href="income_graph.php" id="visit-btn" type="button" style="display:inline-block">Income Graph</a>
             <a href="index.php" id="visit-btn" type="button" style="display:inline-block">Insert Data</a>
             <tr>
-                <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Relative</th>
@@ -43,9 +42,6 @@ $all = $table->getAll();
 
             <?php foreach ($all as $member) : ?>
                 <tr>
-                    <td>
-                        <?= $member->id ?>
-                    </td>
                     <td>
                         <?= $member->name ?>
                     </td>

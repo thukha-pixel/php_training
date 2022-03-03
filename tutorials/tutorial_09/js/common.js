@@ -11,7 +11,6 @@ $(document).ready(function () {
                 yValues.push(parseInt(data[i].income));
             }
             var barColors = ["red", "green", "blue", "orange", "brown"];
-            console.log(yValues);
 
             var chartdata = {
                 labels: xValues,

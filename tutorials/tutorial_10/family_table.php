@@ -34,7 +34,6 @@ $all = $table->getAll();
             <a href="index.php" id="visit-btn" type="button" style="display:inline-block">Insert Data</a>
             <a href="_actions/signout.php" id="visit-btn" type="button" style="display:inline-block" onClick="return confirm('Are you sure?')">Logout</a>
             <tr>
-                <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Relative</th>
@@ -47,9 +46,6 @@ $all = $table->getAll();
 
             <?php foreach ($all as $member) : ?>
                 <tr>
-                    <td>
-                        <?= $member->id ?>
-                    </td>
                     <td>
                         <?= $member->name ?>
                     </td>

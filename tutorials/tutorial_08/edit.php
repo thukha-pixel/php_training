@@ -48,7 +48,7 @@ $all = $table->find($singleId);
             </div>
 
             <form class="form" action="_actions/update.php" method="POST" enctype="multipart/form-data">
-                <input type="text" name="id" value="<?= $all->id ?>">
+                <input type="hidden" name="id" value="<?= $all->id ?>">
                 <input class="form-content" type="text" name="name" placeholder="Enter Name" autocomplete="off" value="<?= $all->name ?>" required>
                 <div class="form-border"></div>
 

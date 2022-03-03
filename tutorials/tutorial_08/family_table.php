@@ -28,7 +28,6 @@ $all = $table->getAll();
 
         <table>
             <tr>
-                <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Relative</th>
@@ -40,9 +39,6 @@ $all = $table->getAll();
 
             <?php foreach ($all as $member) : ?>
                 <tr>
-                    <td>
-                        <?= $member->id ?>
-                    </td>
                     <td>
                         <?= $member->name ?>
                     </td>
