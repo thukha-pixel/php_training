@@ -10,7 +10,11 @@ use App\Models\User; // database
 use Hash; // password or hash values
 
 use App\Contracts\Services\Auth\AuthServiceInterface;
-  
+
+/**
+ * SystemName:Controllers/Auth
+ * ModuleName: AuthController
+ */
 class AuthController extends Controller
 {
 
@@ -20,6 +24,7 @@ class AuthController extends Controller
     {
         $this->authService = $authService;
     }
+
     /**
      * Write code on Method
      *
@@ -93,21 +98,6 @@ class AuthController extends Controller
   
         return redirect("login")->withSuccess('Opps! You do not have access');
     }
-    
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
-    // public function create(array $data)
-    // {
-    //     return $this->authService->create($data);
-    // //   return User::create([
-    // //     'name' => $data['name'],
-    // //     'email' => $data['email'],
-    // //     'password' => Hash::make($data['password'])
-    // //   ]);
-    // }
     
     /**
      * Write code on Method

@@ -7,8 +7,17 @@ use Illuminate\Http\Request;
 use App\Contracts\Dao\Task\TaskDaoInterface;
 use App\Models\Task;
 
+/**
+ * System Name: Task
+ * Module Name TaskDao
+ */
 class TaskDao implements TaskDaoInterface
 {
+    /**
+     * Show All Task 
+     * 
+     * @return array $data
+     */
     public function showAllTask()
     {
         $data = Task::orderBy('created_at', 'asc')->get();
@@ -16,6 +25,13 @@ class TaskDao implements TaskDaoInterface
         return $data;
     }
 
+    /**
+     * Add New Task
+     * 
+     * @param string $name
+     * 
+     * @return string "Inserted"
+     */
     public function addNewTask($name)
     {
         $task = new Task;
@@ -24,6 +40,14 @@ class TaskDao implements TaskDaoInterface
 
         return "Inserted";
     }
+
+    /**
+     * Delete Single Task
+     * 
+     * @param int $id
+     * 
+     * @return string "Deleted"
+     */
 
     public function deleteSingleTask($id)
     {

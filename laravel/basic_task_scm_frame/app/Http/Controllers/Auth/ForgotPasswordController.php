@@ -13,6 +13,10 @@ use Illuminate\Support\Str;
 
 use App\Contracts\Services\Auth\ForgotPasswordServiceInterface;
 
+/**
+ * SystemName: Contollers/Auth 
+ * ModuleName: ForgotPasswordContoller
+ */
 class ForgotPasswordController extends Controller
 {
 
@@ -22,6 +26,7 @@ class ForgotPasswordController extends Controller
     {
         $this->forgotPasswordService = $forgotPasswordService;
     }
+
     /**
      * Write code on Method
      *
@@ -54,6 +59,7 @@ class ForgotPasswordController extends Controller
 
         return back()->with('message', 'We have e-mailed your password reset link!');
     }
+    
     /**
      * Write code on Method
      *

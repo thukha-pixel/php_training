@@ -8,6 +8,10 @@ use App\Models\Task;// for database model
 use App\Contracts\Services\Task\TaskServiceInterface; // dependency injection
 use Illuminate\Support\Facades\Validator;  // for Validate name char more than 255
 
+/**
+ * SystenName: Controller
+ * ModuleName: TaskContoller
+ */
 class TaskController extends Controller
 {
 
@@ -18,6 +22,11 @@ class TaskController extends Controller
         $this->taskService = $taskService;
     }
     
+    /**
+     * Index Page showing All data
+     *
+     * @return view with data
+     */
     public function index()
     {
         $data = $this->taskService->showAllTask();
@@ -27,6 +36,11 @@ class TaskController extends Controller
         ]);
     }
 
+    /**
+     * Add New Task
+     *
+     * @return view
+     */
     public function addNewTask()
     {
         $validator = Validator::make(request()->all(), [
@@ -43,6 +57,11 @@ class TaskController extends Controller
         return redirect('/');
     }
 
+    /**
+     * Delete Single Task
+     *
+     * @return view 
+     */
     public function deleteSingleTask()
     {
         $id = request()->id;
