@@ -18,7 +18,15 @@
 
       <a href="{{ route('student#insert_form') }}" id="visit-btn" type="button" style="display:inline-block">Insert New Student</a>
       <a href="{{ route('student#major') }}" id="visit-btn" type="button" style="display:inline-block">Insert New Major</a>
-      
+      <a href="{{ route('student#export_csv') }}" id="visit-btn" type="button" style="display:inline-block">Export CSV File</a><br>
+
+      <form action="{{ route('student#import_csv') }}" method="post" enctype="multipart/form-data">
+        @csrf
+        <input type="file" name="file" class="form-content">
+
+        <input type="submit" id="update-btn" value="Import CSV File">
+      </form>
+
       <tr>
         <th>Name</th>
         <th>Email</th>

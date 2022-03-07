@@ -32,6 +32,9 @@ Route::prefix('student')->group(function () {
         Route::post('update_student', 'updateStudent')->name('student#update_student');
 
         Route::get('/delete_student/{id}', 'deleteStudent')->name('student#delete_student/{id}');
+
+        Route::get('/export_csv', 'export')->name('student#export_csv');
+        Route::post('/import_csv', 'import')->name('student#import_csv');
     });
 
     Route::controller(Major\MajorController::class)->group(function () {

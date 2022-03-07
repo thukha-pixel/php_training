@@ -35,4 +35,19 @@ interface StudentServiceInterface
      * @param array $data
      */
     public function updateStudent(array $data);
+
+    //////////////////////////
+    /**
+     * Export Data
+     * 
+     * @return resource 
+     */
+    public function export();
+
+    /**
+     * Import Data
+     * 
+     * just procedure
+     */
+    public function import();
 }

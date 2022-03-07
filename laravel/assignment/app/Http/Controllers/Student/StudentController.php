@@ -9,6 +9,11 @@ use App\Models\Student;
 use App\Models\Major;
 
 use App\Contracts\Services\Student\StudentServiceInterface;
+use App\Contracts\Services\Major\MajorServiceInterface;
+
+// use App\Exports\StudentsExport;
+// use App\Imports\StudentsImport;
+// use Maatwebsite\Excel\Facades\Excel;
 
 /**
  * SystemName: assignment
@@ -17,10 +22,12 @@ use App\Contracts\Services\Student\StudentServiceInterface;
 class StudentController extends Controller
 {
     private $studentService;
+    private $majorService;
 
-    public function __construct(StudentServiceInterface $studentService)
+    public function __construct(StudentServiceInterface $studentService, MajorServiceInterface $majorService)
     {
         $this->studentService = $studentService;
+        $this->majorService = $majorService;
     }
     /**
      * Show Student Table
@@ -43,7 +50,7 @@ class StudentController extends Controller
      */
     public function insertForm()
     {
-        $data = Major::all();
+        $data = $this->majorService->showMajor();
         return view('student.insert_form', [
             'data' => $data
         ]);
@@ -89,9 +96,8 @@ class StudentController extends Controller
      */
     public function updateForm(int $id)
     {
-        // $data = Student::find($id);
         $data = $this->studentService->findStudent($id);
-        $dataMajor = Major::all();
+        $dataMajor = $this->majorService->showMajor();
 
         return view('student.update_form', [
             'student' => $data,
@@ -119,5 +125,27 @@ class StudentController extends Controller
         $this->studentService->updateStudent($data);
 
         return redirect('student/table');
+    }
+
+    /////////////////////////////////////////////////
+
+    /**
+    * Export Student Data
+    * @return \Illuminate\Support\Collection
+    */
+    public function export() 
+    {
+        return $this->studentService->export();
+    }
+
+    /**
+    *Import Student Data 
+    * @return \Illuminate\Support\Collection
+    */
+    public function import() 
+    {
+        $this->studentService->import();
+               
+        return back();
     }
 }

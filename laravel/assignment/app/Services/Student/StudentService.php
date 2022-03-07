@@ -5,6 +5,10 @@ namespace App\Services\Student;
 use App\Contracts\Services\Student\StudentServiceInterface;
 use App\Contracts\Dao\Student\StudentDaoInterface;
 
+use App\Exports\StudentsExport;
+use App\Imports\StudentsImport;
+use Maatwebsite\Excel\Facades\Excel;
+
 class StudentService implements StudentServiceInterface
 {
     private $studentDao;
@@ -60,5 +64,22 @@ class StudentService implements StudentServiceInterface
     public function updateStudent(array $data)
     {
         return $this->studentDao->updateStudent($data);
+    }
+
+    /////////////////////////////////////////
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function export()
+    {
+        return Excel::download(new StudentsExport, 'students.xlsx');
+    }
+
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function import() 
+    {
+        Excel::import(new StudentsImport,request()->file('file'));
     }
 }
