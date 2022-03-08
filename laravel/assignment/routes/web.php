@@ -35,6 +35,9 @@ Route::prefix('student')->group(function () {
 
         Route::get('/export_csv', 'export')->name('student#export_csv');
         Route::post('/import_csv', 'import')->name('student#import_csv');
+
+        Route::get('/search_table', 'searchTableView')->name('student#search_table');
+        Route::post('/search_item', 'searchTableView')->name('student#search_item');
     });
 
     Route::controller(Major\MajorController::class)->group(function () {

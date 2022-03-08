@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Student;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-
-use App\Models\Student;
 use App\Models\Major;
+use App\Models\Student;
 
-use App\Contracts\Services\Student\StudentServiceInterface;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+use App\Http\Controllers\Controller;
 use App\Contracts\Services\Major\MajorServiceInterface;
+use App\Contracts\Services\Student\StudentServiceInterface;
 
 // use App\Exports\StudentsExport;
 // use App\Imports\StudentsImport;
@@ -147,5 +148,35 @@ class StudentController extends Controller
         $this->studentService->import();
                
         return back();
+    }
+
+    ///////////////////////////////////////////////
+
+    /**
+     * Search Table View
+     * 
+     * @return array data
+     */
+
+    public function searchTableView()
+    {
+        if (request()->search_item == '')
+        {
+            $data = $this->studentService->showAllStudent();//showAllStudent
+            
+        } else {
+            $searchItem = request()->search_item;
+
+            $data = $this->studentService->searchStudent($searchItem);
+
+            if ( $data == '')
+            {
+                $data = $this->studentService->showAllStudent();//showAllStudent
+            }
+        }
+        
+        return view('student.search_table', [
+            'data' => $data
+        ]);
     }
 }

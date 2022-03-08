@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Table Page</title>
+  <title>Student Search Table Page</title>
   <link rel="stylesheet" href="{{ asset('/css/reset.css') }}">
   <link rel="stylesheet"href="{{ asset('/css/style.css') }}">
 </head>
@@ -16,17 +16,14 @@
 
     <table>
 
-      <a href="{{ route('student#insert_form') }}" id="visit-btn" type="button" style="display:inline-block">Insert New Student</a>
-      <a href="{{ route('student#major') }}" id="visit-btn" type="button" style="display:inline-block">Insert New Major</a>
-      <a href="{{ route('student#search_table') }}" id="visit-btn" type="button" style="display:inline-block">Search Table</a>
-      <a href="{{ route('student#export_csv') }}" id="visit-btn" type="button" style="display:inline-block">Export CSV File</a><br>
-
-      <form action="{{ route('student#import_csv') }}" method="post" enctype="multipart/form-data">
-        @csrf
-        <input type="file" name="file" class="form-content">
-
-        <input type="submit" id="update-btn" value="Import CSV File">
-      </form>
+      <div class="success-alert">
+        <form action="{{ route('student#search_item') }}" method="post" enctype="multipart/form-data">
+            @csrf
+            <input type="text" name="search_item" class="form-content" placeholder="search here" autocomplete="off">
+    
+            <input type="submit" id="update-btn" value="Search">
+          </form>
+      </div>
 
       <tr>
         <th>Name</th>

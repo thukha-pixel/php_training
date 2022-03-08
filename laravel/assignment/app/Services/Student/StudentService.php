@@ -82,4 +82,15 @@ class StudentService implements StudentServiceInterface
     {
         Excel::import(new StudentsImport,request()->file('file'));
     }
+
+    /**
+     * Search Student
+     * 
+     * @param request searchItem
+     * @return array data
+     */
+    public function searchStudent($searchItem)
+    {
+        return $this->studentDao->searchStudent($searchItem);
+    }
 }

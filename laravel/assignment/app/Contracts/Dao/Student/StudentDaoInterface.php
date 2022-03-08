@@ -36,4 +36,12 @@ interface StudentDaoInterface
      * @param array $data
      */
     public function updateStudent(array $data);
+
+    /**
+     * Search Student
+     * @param request searchItem
+     * 
+     * @return array data
+     */
+    public function searchStudent($searchItem);
 }

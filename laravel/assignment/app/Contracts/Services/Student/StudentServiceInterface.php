@@ -50,4 +50,12 @@ interface StudentServiceInterface
      * just procedure
      */
     public function import();
+
+    ///////////////////////////
+    /**
+     * Search Student
+     * @param request searchItem
+     * @return array data
+     */
+    public function searchStudent($searchItem);
 }

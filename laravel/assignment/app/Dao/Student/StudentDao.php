@@ -2,8 +2,9 @@
 
 namespace App\Dao\Student;
 
-use App\Contracts\Dao\Student\StudentDaoInterface;
 use App\Models\Student;
+use Illuminate\Support\Facades\DB;
+use App\Contracts\Dao\Student\StudentDaoInterface;
 
 class StudentDao implements StudentDaoInterface
 {
@@ -71,5 +72,24 @@ class StudentDao implements StudentDaoInterface
         $student->name_of_father = $name_of_father;
         $student->major_id = $major_id;
         $student->save();
+    }
+
+    /**
+     * Search Student
+     * 
+     * @return array data
+     */
+    public function searchStudent($searchItem)
+    {
+        $data = DB::table('students')->select('students.*')
+        ->where('name', 'like', '%'. $searchItem . '%')
+        ->orWhere('email', 'like', '%'. $searchItem. '%')
+        ->orWhere('phone', 'like', '%'. $searchItem. '%')
+        ->orWhere('dob', 'like', '%'. $searchItem. '%')
+        ->orWhere('name_of_father', 'like', '%'. $searchItem. '%')
+        ->orWhere('major_id', 'like', '%'. $searchItem. '%')
+        ->get();
+
+        return $data;
     }
 }
