@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('phone');
-            $table->string('dob');
-            $table->string("name_of_father");
-            $table->foreignId('major_id')->references('id')->on('majors');
+            $table->string('email');
+            $table->string('phone')->nullable();
+            $table->string('dob')->nullable();
+            $table->string("name_of_father")->nullable();
+            $table->foreignId('major_id')->nullable()->references('id')->on('majors')->nullable();
             $table->timestamps();
         });
     }

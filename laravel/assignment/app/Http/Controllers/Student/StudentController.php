@@ -37,7 +37,7 @@ class StudentController extends Controller
      */
     public function showTable()
     {
-        $data = $this->studentService->showAllStudent();//showAllStudent
+        $data = $this->studentService->showAllStudent();  // showAllStudent
 
         return view('student.table', [
             'data' => $data
@@ -174,7 +174,7 @@ class StudentController extends Controller
                 $data = $this->studentService->showAllStudent();//showAllStudent
             }
         }
-        
+
         return view('student.search_table', [
             'data' => $data
         ]);
