@@ -84,19 +84,19 @@ class StudentDao implements StudentDaoInterface
         if (array_key_exists(1, $data)) {
             $student->name = $data[1];
         } 
-        if (array_key_exists(2, $data)) {
+        if (array_key_exists(2, $data) and $data[2] !== null) {
             $student->email = $data[2];
         } 
-        if (array_key_exists(3, $data)) {
+        if (array_key_exists(3, $data) and $data[3] !== null) {
             $student->phone= $data[3];
         } 
-        if (array_key_exists(4, $data)) {
+        if (array_key_exists(4, $data) and $data[4] !== null) {
             $student->dob = $data[4];
         } 
-        if (array_key_exists(5, $data)) {
+        if (array_key_exists(5, $data) and $data[5] !== null) {
             $student->name_of_father = $data[5];
         } 
-        if (array_key_exists(6, $data)) {
+        if (array_key_exists(6, $data) and $data[6] !== null) {
             $student->major_id = (int)$data[6];
         }
         $student->save();

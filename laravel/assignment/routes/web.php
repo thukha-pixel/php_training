@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Major;
 
 use App\Http\Controllers\Student;
-use App\Http\Controllers\Major;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Ajax\StudentAjaxController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,18 @@ Route::prefix('student')->group(function () {
         Route::get('/major', 'showMajor')->name('student#major');
         Route::post('/add_major', 'addMajor')->name('student#add_major');
         Route::post('/delete_major', 'deleteMajor')->name('student#delete_major');
+    });
+
+});
+
+Route::prefix('ajax/student_ajax')->group(function () {
+    
+    Route::controller(StudentAjaxController::class)->group(function () {
+        Route::get('/table', 'showTable')->name('student_ajax#table');
+
+        Route::get('/insert_form', 'insertForm')->name('student_ajax#insert_form');
+
+        Route::get('/update_form/{id}', 'updateForm')->name('student_ajax#update_form');
     });
 
 });
