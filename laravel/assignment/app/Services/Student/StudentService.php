@@ -2,12 +2,15 @@
 
 namespace App\Services\Student;
 
-use App\Contracts\Services\Student\StudentServiceInterface;
-use App\Contracts\Dao\Student\StudentDaoInterface;
-
 use App\Exports\StudentsExport;
 use App\Imports\StudentsImport;
+
+use App\Mail\CreateSuccessMail;
+use App\Mail\DeleteSuccessMail;
+use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Contracts\Dao\Student\StudentDaoInterface;
+use App\Contracts\Services\Student\StudentServiceInterface;
 
 class StudentService implements StudentServiceInterface
 {
@@ -93,5 +96,36 @@ class StudentService implements StudentServiceInterface
     public function searchStudent($searchItem)
     {
         return $this->studentDao->searchStudent($searchItem);
+    }
+
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    public function sendCreateSuccessMail(string $email)
+    {
+        $mailData = [
+            'title' => 'Mail from Laravel Assignment 6',
+            'body' => 'Create Data Successfully!',
+        ];
+
+        Mail::to("$email")->send(new CreateSuccessMail($mailData));
+
+    }
+
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    public function sendDeleteSuccessMail(string $email)
+    {
+        $mailData = [
+            'title' => 'Mail from Laravel Assignment 6',
+            'body' => 'Delete Data Successfully!',
+        ];
+
+        Mail::to("$email")->send(new DeleteSuccessMail($mailData));
     }
 }

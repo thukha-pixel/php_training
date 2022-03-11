@@ -74,7 +74,7 @@ class StudentController extends Controller
         ];
 
         $this->studentService->insertStudent($data);
-
+        $this->studentService->sendCreateSuccessMail(request()->email);
         return redirect('student/table');
     }
 
@@ -85,6 +85,8 @@ class StudentController extends Controller
      */
     public function deleteStudent(int $id)
     {
+        $data = $this->studentService->findStudent($id);
+        $this->studentService->sendDeleteSuccessMail($data->email);
         $this->studentService->deleteStudent($id);
         return redirect('student/table');
     }
@@ -128,8 +130,6 @@ class StudentController extends Controller
         return redirect('student/table');
     }
 
-    /////////////////////////////////////////////////
-
     /**
     * Export Student Data
     * @return \Illuminate\Support\Collection
@@ -150,8 +150,6 @@ class StudentController extends Controller
         return back();
     }
 
-    ///////////////////////////////////////////////
-
     /**
      * Search Table View
      * 
@@ -162,7 +160,7 @@ class StudentController extends Controller
     {
         if (request()->search_item == '')
         {
-            $data = $this->studentService->showAllStudent();//showAllStudent
+            $data = $this->studentService->showAllStudent();  //showAllStudent
             
         } else {
             $searchItem = request()->search_item;
@@ -171,7 +169,7 @@ class StudentController extends Controller
 
             if ( $data == '')
             {
-                $data = $this->studentService->showAllStudent();//showAllStudent
+                $data = $this->studentService->showAllStudent();  //showAllStudent
             }
         }
 

@@ -36,7 +36,6 @@ interface StudentServiceInterface
      */
     public function updateStudent(array $data);
 
-    //////////////////////////
     /**
      * Export Data
      * 
@@ -51,11 +50,24 @@ interface StudentServiceInterface
      */
     public function import();
 
-    ///////////////////////////
     /**
      * Search Student
      * @param request searchItem
      * @return array data
      */
     public function searchStudent($searchItem);
+
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    public function sendCreateSuccessMail(string $email);
+
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    public function sendDeleteSuccessMail(string $email);
 }

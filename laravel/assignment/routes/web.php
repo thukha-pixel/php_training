@@ -4,6 +4,7 @@ use App\Http\Controllers\Major;
 
 use App\Http\Controllers\Student;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\Ajax\StudentAjaxController;
 
 /*
@@ -60,3 +61,6 @@ Route::prefix('ajax/student_ajax')->group(function () {
     });
 
 });
+
+// Route::get('create_success_mail', [MailController::class, 'createSuccessMail']);
+// Route::get('delete_success_mail', [MailController::class, 'deleteSuccessMail']);
