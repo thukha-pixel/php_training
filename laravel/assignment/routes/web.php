@@ -1,11 +1,7 @@
 <?php
 
-use App\Http\Controllers\Major;
-
-use App\Http\Controllers\Student;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MailController;
 use App\Http\Controllers\Ajax\StudentAjaxController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +12,7 @@ use App\Http\Controllers\Ajax\StudentAjaxController;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     return view('welcome');
@@ -51,7 +47,7 @@ Route::prefix('student')->group(function () {
 });
 
 Route::prefix('ajax/student_ajax')->group(function () {
-    
+
     Route::controller(StudentAjaxController::class)->group(function () {
         Route::get('/table', 'showTable')->name('student_ajax#table');
 
